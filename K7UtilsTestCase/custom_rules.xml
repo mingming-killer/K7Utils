@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="K7UtilsTestCase_build_rules" default="debug">
+    <property name="custom.project.dir" value="${source.absolute.dir}/.." />
+    <property name="custom.out.lib.dir" value="${custom.project.dir}/../../../libout" />
+    <property name="custom.input.dir" value="${custom.project.dir}/input" />
+    <property name="custom.input.lib.dir" value="${custom.project.dir}/libs" />
+
+    <!-- I don't why cant's get ${out.absolute.dir} value, so I have to set the path myself. -->
+    <property name="custom.out.dir" value="${custom.project.dir}/bin" />
+
+    <!-- TODO: put your depend libarary files here -->
+    <!--
+    <property name="custom.input.jar.file.1" value="K7Utils.jar" />
+    -->
+
+    <property name="custom.out.lib.jar.file" value="${ant.project.name}.jar" />
+    <property name="custom.out.lib.source.jar.file" value="${custom.out.dir}/${ant.project.name}-source.jar" />
+    <property name="custom.out.lib.source.jar.properties.flie" value="${custom.input.dir}/${custom.out.lib.jar.file}.properties" />
+
+
+    <!-- custom clean -->
+    <target name="custom-clean" depends="clean" description="do custom-clean">
+        <echo>delete depend libs ...</echo>
+
+	    <!-- delete depend libs directory -->
+        <delete dir="${custom.input.lib.dir}"/>
+   	</target>
+
+
+    <!-- bbk hack first task -->
+    <target name="-pre-bbk-init" description="do pre-bbk-init">
+        <!-- do noting -->
+   	</target>
+
+
+    <!-- before clean -->
+    <target name="-pre-clean" description="do pre-clean">
+	    <!-- delete depend libs directory -->
+        <!--
+        <delete dir="${custom.input.lib.dir}"/>
+        -->
+   	</target>
+ 
+
+    <!-- before compile -->
+    <target name="-pre-build" description="do pre-build">
+	    <!-- create depend libs directory -->
+		<mkdir dir="${custom.input.lib.dir}" />
+
+	    <!-- create out put directory -->
+		<mkdir dir="${custom.out.dir}" />
+
+		<!-- copy some depend library to libs -->
+        <!--
+		<copy file="${customlib.out}/DataJar.jar" todir="${source.absolute.dir}/../libs" />
+		<copy file="${customlib.out}/screenshotsviewiner.jar" todir="${source.absolute.dir}/../libs" />
+        -->
+   	</target>
+		
+    	
+    <!-- after compile -->
+    <target name="-post-compile" description="do post-compile">
+        <!-- do noting -->
+	</target>
+
+
+</project>
