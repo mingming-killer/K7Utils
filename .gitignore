@@ -1,12 +1,28 @@
+*.pyc
+*.*~
+*.py~
+*~
+*.o
+*.cmd
 *.class
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.ear
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+*.apk
+*.ap_
+*.swp
+*.~ml
+*.dia~
+*.dia.autosave
+*.~ml
+.project
+.cproject
+.classpath
+bin/
+obj/
+gen/
+libs/
+proguard/
+.settings/
+.externalToolBuilders/
+ic_launcher-web.png
+proguard-project.txt
+local.properties
+lint.xml
